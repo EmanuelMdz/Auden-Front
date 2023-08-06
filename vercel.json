@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "name": "audn",
+  "routes": [
+     { "src": "/(.*)", "dest": "/server.js" }
+  ]
+}
