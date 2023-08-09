@@ -9,9 +9,7 @@ export const Login = () => {
   //--------------------------FETCH-----------------------//
   const fetchDataUser = async () => {
     try {
-      const response = await fetch(
-        `https://vercel.com/emanuelmdz/auden-front/Dm4oyfgT4ysqiXACzotdJn36uV1S/users`
-      );
+      const response = await fetch(`http://localhost:3002/users`);
       const dataUsers = await response.json();
       setFetchDataUser(dataUsers);
       localStorage.removeItem("DataUsername");
