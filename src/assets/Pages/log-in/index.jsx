@@ -9,7 +9,9 @@ export const Login = () => {
   //--------------------------FETCH-----------------------//
   const fetchDataUser = async () => {
     try {
-      const response = await fetch(`http://localhost:3002/users`);
+      const response = await fetch(
+        `https://vercel.com/emanuelmdz/auden-front/Dm4oyfgT4ysqiXACzotdJn36uV1S/users`
+      );
       const dataUsers = await response.json();
       setFetchDataUser(dataUsers);
       localStorage.removeItem("DataUsername");
@@ -156,7 +158,9 @@ export const Login = () => {
                 value={formData.nombreoemail}
                 onChange={handleChange}
                 className={emptyFields.nombreoemail ? "InputError " : ""}
-                placeholder={emptyFields.nombreoemail ? "Este campo es requerido." : ""}
+                placeholder={
+                  emptyFields.nombreoemail ? "Este campo es requerido." : ""
+                }
               />
             </label>
           </div>
@@ -171,7 +175,9 @@ export const Login = () => {
                   value={formData.password}
                   onChange={handleChange}
                   className={emptyFields.password ? "InputError" : ""}
-                  placeholder={emptyFields.password ? "Este campo es requerido." : ""}
+                  placeholder={
+                    emptyFields.password ? "Este campo es requerido." : ""
+                  }
                 />
               </div>
             </label>
@@ -182,9 +188,14 @@ export const Login = () => {
             <a
               onClick={handleSubmit}
               className={`Default_btn ${
-                hasErrors || !formData.nombreoemail || !formData.password ? "standar" : "actived"
+                hasErrors || !formData.nombreoemail || !formData.password
+                  ? "standar"
+                  : "actived"
               }`}
-              disabled={hasErrors || !formData.nombreoemail || !formData.password}>
+              disabled={
+                hasErrors || !formData.nombreoemail || !formData.password
+              }
+            >
               Iniciar Sesión
             </a>
             <a href="http://localhost:5173/recuperarcuenta">
