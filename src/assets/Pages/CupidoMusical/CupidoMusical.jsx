@@ -12,7 +12,7 @@ export const CupidoMusical = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:3002/songs")
+    fetch("https://auden-back-tau.vercel.app/songs")
       .then((response) => response.json())
       .then((data) => {
         setSongData(data); // Actualizar el estado con los datos del fetch
@@ -22,7 +22,7 @@ export const CupidoMusical = () => {
 
   useEffect(() => {
     let userData = localStorage.getItem("DataUsername");
-    fetch(`http://localhost:3002/users/${userData}`)
+    fetch(`https://auden-back-tau.vercel.app/users/${userData}`)
       .then((response) => response.json())
       .then((data) => {
         setUserDatas(data); // Actualizar el estado con los datos del fetch
@@ -70,11 +70,14 @@ export const CupidoMusical = () => {
         songs: likeList,
       });
 
-      let response = await fetch("http://localhost:3002/playlist/", {
-        method: "POST",
-        body: bodyContent,
-        headers: headersList,
-      });
+      let response = await fetch(
+        "https://auden-back-tau.vercel.app/playlist/",
+        {
+          method: "POST",
+          body: bodyContent,
+          headers: headersList,
+        }
+      );
 
       let data = await response.text();
       console.log(data);
@@ -104,7 +107,10 @@ export const CupidoMusical = () => {
 
             <div className="cover-next">
               {currentArtistIndex + 1 < songData.length ? (
-                <img src={songData[currentArtistIndex + 1].song_image_url} alt="" />
+                <img
+                  src={songData[currentArtistIndex + 1].song_image_url}
+                  alt=""
+                />
               ) : (
                 <img src={songData[0].song_image_url} alt="" />
               )}
@@ -114,7 +120,10 @@ export const CupidoMusical = () => {
             <span className="button-container-rounded-ld" onClick={handleLike}>
               <img src="src/public/vlike.svg" alt="" />
             </span>
-            <span className="button-container-rounded-ld" onClick={handleDislike}>
+            <span
+              className="button-container-rounded-ld"
+              onClick={handleDislike}
+            >
               <img src="src/public/rdislike.svg" alt="" />
             </span>
           </div>
@@ -129,7 +138,11 @@ export const CupidoMusical = () => {
             <div className="matches-tittle-box-container">
               <span>Matches actuales:</span>
             </div>
-            <span id="rewind" className="button-container-rounded-ld" onClick={handleRewind}>
+            <span
+              id="rewind"
+              className="button-container-rounded-ld"
+              onClick={handleRewind}
+            >
               <img src="src/public/rewind.svg" alt="" />
             </span>
           </div>
@@ -137,13 +150,18 @@ export const CupidoMusical = () => {
           <div className="matches-generados-container">
             {likeList.map((songId, index) => {
               // Buscar la canción correspondiente al song_id en songData
-              const likedSong = songData.find((song) => song.song_id === songId);
+              const likedSong = songData.find(
+                (song) => song.song_id === songId
+              );
 
               // Verificar si se encontró la canción antes de mostrarla
               if (likedSong) {
                 return (
                   <div key={index} className="matches-cover slide-in-right">
-                    <img src={likedSong.song_image_url} alt={likedSong.song_name} />
+                    <img
+                      src={likedSong.song_image_url}
+                      alt={likedSong.song_name}
+                    />
                   </div>
                 );
               } else {

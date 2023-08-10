@@ -22,18 +22,25 @@ export const Playlist = () => {
 
   useEffect(() => {
     Promise.all([
-      fetch(`http://localhost:3002/playlist/${playlist_Id}`).then((response) => response.json()),
-      fetch(`http://localhost:3002/playlist/songs/${playlist_Id}`).then((response) => response.json()),
+      fetch(`http://localhost:3002/playlist/${playlist_Id}`).then((response) =>
+        response.json()
+      ),
+      fetch(`http://localhost:3002/playlist/songs/${playlist_Id}`).then(
+        (response) => response.json()
+      ),
     ])
       .then(([playlistDataResponse, playlistSongsResponse]) => {
         setPlaylistData(playlistDataResponse[0]);
         setPlaylistSongs(playlistSongsResponse);
-        const totalDurationInSeconds = playlistSongsResponse.reduce((acc, song) => {
-          const minutes = song.song_duration.minutes || 0;
-          const seconds = song.song_duration.seconds || 0;
-          acc += minutes * 60 + seconds;
-          return acc;
-        }, 0);
+        const totalDurationInSeconds = playlistSongsResponse.reduce(
+          (acc, song) => {
+            const minutes = song.song_duration.minutes || 0;
+            const seconds = song.song_duration.seconds || 0;
+            acc += minutes * 60 + seconds;
+            return acc;
+          },
+          0
+        );
         const totalMinutes = Math.floor(totalDurationInSeconds / 60);
         const totalSeconds = totalDurationInSeconds % 60;
         setTotalTime(`${totalMinutes}m ${totalSeconds}s`);
@@ -45,7 +52,10 @@ export const Playlist = () => {
     <>
       <BackgroundB>
         <div className="playlist_main_cont">
-          <HeaderA tituloPrincipal={playlistData.playlist_name} redirectUrl={"/user-profile"} />
+          <HeaderA
+            tituloPrincipal={playlistData.playlist_name}
+            redirectUrl={"/user-profile"}
+          />
 
           <div className="dinamic-block-container"></div>
 
@@ -79,7 +89,11 @@ export const Playlist = () => {
           <div className="playlist-songs-container">
             {playlistSongs.map((song, index) => (
               <Link key={song.song_id} to={`/song/${song.song_id}`}>
-                <SongRow name={song.song_name} artist={song.artist_name} url={song.song_image_url} />
+                <SongRow
+                  name={song.song_name}
+                  artist={song.artist_name}
+                  url={song.song_image_url}
+                />
               </Link>
             ))}
           </div>

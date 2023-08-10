@@ -9,8 +9,9 @@ export const Login = () => {
   //--------------------------FETCH-----------------------//
   const fetchDataUser = async () => {
     try {
-      const response = await fetch(`http://localhost:3002/users`);
+      const response = await fetch(`https://auden-back-tau.vercel.app/users`);
       const dataUsers = await response.json();
+      console.log(dataUsers);
       setFetchDataUser(dataUsers);
       localStorage.removeItem("DataUsername");
     } catch (error) {
@@ -34,11 +35,14 @@ export const Login = () => {
       user_userpassword: formData.password,
     });
 
-    let response = await fetch("http://localhost:3002/users/login", {
-      method: "POST",
-      body: bodyContent,
-      headers: headersList,
-    });
+    let response = await fetch(
+      "https://auden-back-tau.vercel.app/users/login",
+      {
+        method: "POST",
+        body: bodyContent,
+        headers: headersList,
+      }
+    );
 
     if (response.ok) {
       let data = await response.json();
@@ -47,7 +51,7 @@ export const Login = () => {
       cookies.set("userToken", token, { expires: 1 });
 
       // Redirigir al usuario a la siguiente página después del inicio de sesión exitoso
-      window.location.href = "http://localhost:5173/home";
+      window.location.href = "https://localhost:5173/home";
     } else {
       // Si el inicio de sesión falla, puedes mostrar un mensaje de error
       console.log("Inicio de sesión fallido");

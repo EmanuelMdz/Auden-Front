@@ -109,7 +109,10 @@ export const UserProfile = () => {
 
           <div className="playlist-box-container fade-in-left">
             {groupSongsByPlaylist().map((playlistData) => (
-              <Link key={playlistData.playlist_id} to={`/playlist/${playlistData.playlist_id}`}>
+              <Link
+                key={playlistData.playlist_id}
+                to={`/playlist/${playlistData.playlist_id}`}
+              >
                 <CardPortadaMultiple
                   key={playlistData.playlist_id}
                   images={playlistData.songs.map((song) => song.song_image_url)}

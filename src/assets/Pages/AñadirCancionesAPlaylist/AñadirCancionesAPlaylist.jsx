@@ -31,7 +31,7 @@ const AñadirCancionesAPlaylist = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:3002/joins`);
+        const response = await fetch(`https://auden-back-tau.vercel.app/joins`);
         const dataSongs = await response.json();
         setFetchDataSong(dataSongs);
         setLoading(false);
@@ -49,11 +49,14 @@ const AñadirCancionesAPlaylist = () => {
       } else {
       }
       try {
-        const response = await fetch(`http://localhost:3002/users/`, {
-          headers: {
-            "x-auth-token": token,
-          },
-        });
+        const response = await fetch(
+          `https://auden-back-tau.vercel.app/users/`,
+          {
+            headers: {
+              "x-auth-token": token,
+            },
+          }
+        );
         const data = await response.json();
         setDataUsers(data[0]);
       } catch (error) {
@@ -79,11 +82,14 @@ const AñadirCancionesAPlaylist = () => {
         songs: selectedSongs,
       });
 
-      let response = await fetch("http://localhost:3002/playlist/", {
-        method: "POST",
-        body: bodyContent,
-        headers: headersList,
-      });
+      let response = await fetch(
+        "https://auden-back-tau.vercel.app/playlist/",
+        {
+          method: "POST",
+          body: bodyContent,
+          headers: headersList,
+        }
+      );
 
       let data = await response.text();
 
@@ -126,202 +132,262 @@ const AñadirCancionesAPlaylist = () => {
                             </a> */}
               <a
                 id="recientes"
-                className={`tag-black-ab ${selectedTag === "recientes" ? "tag-orange-ab" : ""}`}
+                className={`tag-black-ab ${
+                  selectedTag === "recientes" ? "tag-orange-ab" : ""
+                }`}
                 href="#"
                 onClick={() => {
                   handleTagClick("recientes");
                   handleTagSelection("Recientes");
-                }}>
+                }}
+              >
                 Recientes
               </a>
               <a
                 id="megusta"
-                className={`tag-black-ab ${selectedTag === "megusta" ? "tag-orange-ab" : ""}`}
+                className={`tag-black-ab ${
+                  selectedTag === "megusta" ? "tag-orange-ab" : ""
+                }`}
                 href="#"
                 onClick={() => {
                   handleTagClick("megusta");
                   handleTagSelection("Me Gusta");
-                }}>
+                }}
+              >
                 Me Gusta
               </a>
               <a
                 id="rock"
-                className={`tag-black-ab ${selectedTag === "rock" ? "tag-orange-ab" : ""}`}
+                className={`tag-black-ab ${
+                  selectedTag === "rock" ? "tag-orange-ab" : ""
+                }`}
                 href="#"
                 onClick={() => {
                   handleTagClick("rock");
                   handleTagSelection("Rock");
-                }}>
+                }}
+              >
                 Rock
               </a>
               <a
                 id="country"
-                className={`tag-black-ab ${selectedTag === "country" ? "tag-orange-ab" : ""}`}
+                className={`tag-black-ab ${
+                  selectedTag === "country" ? "tag-orange-ab" : ""
+                }`}
                 href="#"
                 onClick={() => {
                   handleTagClick("country");
                   handleTagSelection("Country");
-                }}>
+                }}
+              >
                 Country
               </a>
               <a
                 id="soul"
-                className={`tag-black-ab ${selectedTag === "soul" ? "tag-orange-ab" : ""}`}
+                className={`tag-black-ab ${
+                  selectedTag === "soul" ? "tag-orange-ab" : ""
+                }`}
                 href="#"
                 onClick={() => {
                   handleTagClick("soul");
                   handleTagSelection("Soul");
-                }}>
+                }}
+              >
                 Soul
               </a>
               <a
                 id="jazz"
-                className={`tag-black-ab ${selectedTag === "jazz" ? "tag-orange-ab" : ""}`}
+                className={`tag-black-ab ${
+                  selectedTag === "jazz" ? "tag-orange-ab" : ""
+                }`}
                 href="#"
                 onClick={() => {
                   handleTagClick("jazz");
                   handleTagSelection("Jazz");
-                }}>
+                }}
+              >
                 Jazz
               </a>
               <a
                 id="blues"
-                className={`tag-black-ab ${selectedTag === "blues" ? "tag-orange-ab" : ""}`}
+                className={`tag-black-ab ${
+                  selectedTag === "blues" ? "tag-orange-ab" : ""
+                }`}
                 href="#"
                 onClick={() => {
                   handleTagClick("blues");
                   handleTagSelection("Blues");
-                }}>
+                }}
+              >
                 Blues
               </a>
               <a
                 id="hip-hop"
-                className={`tag-black-ab ${selectedTag === "hip-hop" ? "tag-orange-ab" : ""}`}
+                className={`tag-black-ab ${
+                  selectedTag === "hip-hop" ? "tag-orange-ab" : ""
+                }`}
                 href="#"
                 onClick={() => {
                   handleTagClick("hip-hop");
                   handleTagSelection("Hip-Hop");
-                }}>
+                }}
+              >
                 Hip-Hop
               </a>
               <a
                 id="pop"
-                className={`tag-black-ab ${selectedTag === "pop" ? "tag-orange-ab" : ""}`}
+                className={`tag-black-ab ${
+                  selectedTag === "pop" ? "tag-orange-ab" : ""
+                }`}
                 href="#"
                 onClick={() => {
                   handleTagClick("pop");
                   handleTagSelection("Pop");
-                }}>
+                }}
+              >
                 Pop
               </a>
               <a
                 id="reggae"
-                className={`tag-black-ab ${selectedTag === "reggae" ? "tag-orange-ab" : ""}`}
+                className={`tag-black-ab ${
+                  selectedTag === "reggae" ? "tag-orange-ab" : ""
+                }`}
                 href="#"
                 onClick={() => {
                   handleTagClick("reggae");
                   handleTagSelection("Reggae");
-                }}>
+                }}
+              >
                 Reggae
               </a>
               <a
                 id="folk"
-                className={`tag-black-ab ${selectedTag === "folk" ? "tag-orange-ab" : ""}`}
+                className={`tag-black-ab ${
+                  selectedTag === "folk" ? "tag-orange-ab" : ""
+                }`}
                 href="#"
                 onClick={() => {
                   handleTagClick("folk");
                   handleTagSelection("Folk");
-                }}>
+                }}
+              >
                 Folk
               </a>
               <a
                 id="rb"
-                className={`tag-black-ab ${selectedTag === "rb" ? "tag-orange-ab" : ""}`}
+                className={`tag-black-ab ${
+                  selectedTag === "rb" ? "tag-orange-ab" : ""
+                }`}
                 href="#"
                 onClick={() => {
                   handleTagClick("rb");
                   handleTagSelection("R&B");
-                }}>
+                }}
+              >
                 R&B
               </a>
               <a
                 id="clasico"
-                className={`tag-black-ab ${selectedTag === "clasico" ? "tag-orange-ab" : ""}`}
+                className={`tag-black-ab ${
+                  selectedTag === "clasico" ? "tag-orange-ab" : ""
+                }`}
                 href="#"
                 onClick={() => {
                   handleTagClick("clasico");
                   handleTagSelection("Clásico");
-                }}>
+                }}
+              >
                 Clásico
               </a>
               <a
                 id="alternativo"
-                className={`tag-black-ab ${selectedTag === "alternativo" ? "tag-orange-ab" : ""}`}
+                className={`tag-black-ab ${
+                  selectedTag === "alternativo" ? "tag-orange-ab" : ""
+                }`}
                 href="#"
                 onClick={() => {
                   handleTagClick("alternativo");
                   handleTagSelection("Alternativo");
-                }}>
+                }}
+              >
                 Alternativo
               </a>
               <a
                 id="ambiente"
-                className={`tag-black-ab ${selectedTag === "ambiente" ? "tag-orange-ab" : ""}`}
+                className={`tag-black-ab ${
+                  selectedTag === "ambiente" ? "tag-orange-ab" : ""
+                }`}
                 href="#"
                 onClick={() => {
                   handleTagClick("ambiente");
                   handleTagSelection("Ambiente");
-                }}>
+                }}
+              >
                 Ambiente
               </a>
               <a
                 id="edm"
-                className={`tag-black-ab ${selectedTag === "edm" ? "tag-orange-ab" : ""}`}
+                className={`tag-black-ab ${
+                  selectedTag === "edm" ? "tag-orange-ab" : ""
+                }`}
                 href="#"
                 onClick={() => {
                   handleTagClick("edm");
                   handleTagSelection("EDM");
-                }}>
+                }}
+              >
                 EDM
               </a>
               <a
                 id="electronica"
-                className={`tag-black-ab ${selectedTag === "electronica" ? "tag-orange-ab" : ""}`}
+                className={`tag-black-ab ${
+                  selectedTag === "electronica" ? "tag-orange-ab" : ""
+                }`}
                 href="#"
                 onClick={() => {
                   handleTagClick("electronica");
                   handleTagSelection("Electrónica");
-                }}>
+                }}
+              >
                 Electrónica
               </a>
               <a
                 id="disco"
-                className={`tag-black-ab ${selectedTag === "disco" ? "tag-orange-ab" : ""}`}
+                className={`tag-black-ab ${
+                  selectedTag === "disco" ? "tag-orange-ab" : ""
+                }`}
                 href="#"
                 onClick={() => {
                   handleTagClick("disco");
                   handleTagSelection("Disco");
-                }}>
+                }}
+              >
                 Disco
               </a>
               <a
                 id="newage"
-                className={`tag-black-ab ${selectedTag === "newage" ? "tag-orange-ab" : ""}`}
+                className={`tag-black-ab ${
+                  selectedTag === "newage" ? "tag-orange-ab" : ""
+                }`}
                 href="#"
                 onClick={() => {
                   handleTagClick("newage");
                   handleTagSelection("New Age");
-                }}>
+                }}
+              >
                 New Age
               </a>
               <a
                 id="punk"
-                className={`tag-black-ab ${selectedTag === "punk" ? "tag-orange-ab" : ""}`}
+                className={`tag-black-ab ${
+                  selectedTag === "punk" ? "tag-orange-ab" : ""
+                }`}
                 href="#"
                 onClick={() => {
                   handleTagClick("punk");
                   handleTagSelection("Punk");
-                }}>
+                }}
+              >
                 Punk
               </a>
             </div>
@@ -337,7 +403,9 @@ const AñadirCancionesAPlaylist = () => {
                 artist={song.artist_name}
                 url={song.song_image_url}
                 isAdded={selectedSongs.includes(song.song_id)}
-                onToggleSongSelection={() => handleToggleSongSelection(song.song_id)}
+                onToggleSongSelection={() =>
+                  handleToggleSongSelection(song.song_id)
+                }
               />
             ))}
         </div>

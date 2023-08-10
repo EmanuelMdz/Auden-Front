@@ -92,17 +92,26 @@ export const Registeruser = () => {
               {/* ADD ERROR or OK */}
               <label className="label_p" htmlFor="">
                 <p>Nombre de Usuario</p>
-                <input type="text" value={username} onChange={handleUsernameChange} />
+                <input
+                  type="text"
+                  value={username}
+                  onChange={handleUsernameChange}
+                />
                 {/* --------------INPUT PASSWORD--------------- */}
               </label>{" "}
             </div>
             <div className="labels_input password">
               <label htmlFor="">
                 <p>Contraseña:</p>
-                <input type="password" value={password} onChange={handlePasswordChange} />
+                <input
+                  type="password"
+                  value={password}
+                  onChange={handlePasswordChange}
+                />
                 <div className="check">
                   <p className="terms">
-                    He leído y acepto los <a href="">Términos</a> y <a href="">Condiciones</a>.
+                    He leído y acepto los <a href="">Términos</a> y{" "}
+                    <a href="">Condiciones</a>.
                   </p>
                 </div>
               </label>
@@ -111,7 +120,10 @@ export const Registeruser = () => {
           <a
             type="submit"
             onClick={handleSubmit}
-            className={`Default_btn ${!usernameEmpty && !passwordEmpty ? "actived" : "standar"} submit`}>
+            className={`Default_btn ${
+              !usernameEmpty && !passwordEmpty ? "actived" : "standar"
+            } submit`}
+          >
             Continuar
           </a>
         </div>
