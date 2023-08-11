@@ -25,11 +25,14 @@ export const UserProfile = () => {
       } else {
       }
       try {
-        const response = await fetch(`http://localhost:3002/users/playlist/`, {
-          headers: {
-            "x-auth-token": token,
-          },
-        });
+        const response = await fetch(
+          `https://auden-back-tau.vercel.app/users/playlist/`,
+          {
+            headers: {
+              "x-auth-token": token,
+            },
+          }
+        );
         const data = await response.json();
         setDataUsers(data[0]);
         setUserPlaylistData(data);

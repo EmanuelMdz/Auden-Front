@@ -54,11 +54,14 @@ export const Registeruser = () => {
         user_email: email,
       });
 
-      let response = await fetch("http://localhost:3002/users/register", {
-        method: "POST",
-        body: bodyContent,
-        headers: headersList,
-      });
+      let response = await fetch(
+        "https://auden-back-tau.vercel.app/users/register",
+        {
+          method: "POST",
+          body: bodyContent,
+          headers: headersList,
+        }
+      );
 
       let data = await response.text();
       console.log(data);

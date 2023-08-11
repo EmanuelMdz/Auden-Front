@@ -19,7 +19,7 @@ const Search = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch(`http://localhost:3002/joins`);
+      const response = await fetch(`https://auden-back-tau.vercel.app/joins`);
       const dataSongs = await response.json();
       setFetchDataSong(dataSongs);
       setTimeout(() => {

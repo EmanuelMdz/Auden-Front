@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./index.css";
 import cookies from "js-cookie";
 
 export const Login = () => {
   const [error, setError] = useState(null);
   const [fetchDatUser, setFetchDataUser] = useState([]);
+  const navigate = useNavigate();
 
   //--------------------------FETCH-----------------------//
   const fetchDataUser = async () => {
@@ -51,7 +53,7 @@ export const Login = () => {
       cookies.set("userToken", token, { expires: 1 });
 
       // Redirigir al usuario a la siguiente página después del inicio de sesión exitoso
-      window.location.href = "https://localhost:5173/home";
+      navigate("/home");
     } else {
       // Si el inicio de sesión falla, puedes mostrar un mensaje de error
       console.log("Inicio de sesión fallido");
