@@ -136,7 +136,7 @@ export const Login = () => {
       }
     }
   };
-  const goToRecuperarCuenta = navigate("/recuperarcuenta");
+
   return (
     <div className="login_container">
       <nav className="navbar_container">
@@ -201,7 +201,7 @@ export const Login = () => {
             >
               Iniciar Sesión
             </a>
-            <a onClick={goToRecuperarCuenta}>
+            <a href="http://localhost:5173/recuperarcuenta">
               <p>¿Olvidaste tu contraseña?</p>
             </a>
           </div>
