@@ -17,7 +17,7 @@ export const UserProfile = () => {
   const navigate = useNavigate();
 
   localStorage.setItem("DataUsers", JSON.stringify(DataUsers));
-
+  const goToCrearPlaylist = useNavigate("/crear-playlist");
   useEffect(() => {
     const fetchData = async () => {
       const token = cookies.get("userToken");
@@ -108,7 +108,7 @@ export const UserProfile = () => {
             </span>
             <img src="src/public/divider.svg" alt="" />
             <div id="btn-crear-playlist" className="btn-crear-playlist">
-              <a href="/crear-playlist">Crear Playlist</a>
+              <a onClick={goToCrearPlaylist}>Crear Playlist</a>
             </div>
           </div>
 
