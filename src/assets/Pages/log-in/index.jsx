@@ -13,7 +13,6 @@ export const Login = () => {
     try {
       const response = await fetch(`https://auden-back-tau.vercel.app/users`);
       const dataUsers = await response.json();
-      console.log(dataUsers);
       setFetchDataUser(dataUsers);
       localStorage.removeItem("DataUsername");
     } catch (error) {
