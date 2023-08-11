@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./cupidoMusical.css";
 import BackgroundA from "../../components/BackgroundA/BackgroundA";
 import HeaderA from "../../components/HeaderA/HeaderA";
@@ -10,6 +11,7 @@ export const CupidoMusical = () => {
   const [songData, setSongData] = useState([]);
   const [userDatas, setUserDatas] = useState([]);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("https://auden-back-tau.vercel.app/songs")
@@ -84,7 +86,7 @@ export const CupidoMusical = () => {
 
       if (response.ok) {
         console.log("Playlist Creada");
-        window.location.href = "http://localhost:5173/user-profile";
+        navigate("/user-profile");
       } else {
         const data = await response.json();
         setError(data.message || "Error al crear la playlist.");

@@ -1,5 +1,6 @@
 import React from "react";
 import "./UserProfile.css";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import BackgroundC from "../../components/BackgroundC/BackgroundC";
 import { useEffect, useState } from "react";
@@ -13,6 +14,7 @@ export const UserProfile = () => {
   const [loading, setLoading] = useState(true); // Initialize loading state as true
   const [DataUsers, setDataUsers] = useState([]);
   const [userPlaylistData, setUserPlaylistData] = useState([]);
+  const navigate = useNavigate();
 
   localStorage.setItem("DataUsers", JSON.stringify(DataUsers));
 

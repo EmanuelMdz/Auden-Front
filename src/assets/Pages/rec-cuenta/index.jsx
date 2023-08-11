@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./rc.css";
 
 export const Recuperarcuenta = () => {
+  const navigate = useNavigate();
   const mostrarModal = (e) => {
     e.preventDefault();
     let modal = document.querySelector(".modal");
@@ -12,11 +14,12 @@ export const Recuperarcuenta = () => {
     let modal = document.querySelector(".modal");
     modal.classList.add("hidden");
   };
+  const goToLogin = navigate("/login");
   return (
     <div>
       <div className="login_container">
         <nav className="navbar_container">
-          <a href="http://localhost:5173/login">
+          <a onClick={goToLogin}>
             {" "}
             <img src="src\public\left-icon-placeholder.png" alt="<-" />
           </a>

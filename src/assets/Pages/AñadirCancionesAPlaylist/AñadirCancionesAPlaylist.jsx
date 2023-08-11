@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./AñadirCancionesAPlaylist.css";
 import { Link } from "react-router-dom";
 import BackgroundA from "../../components/BackgroundA/BackgroundA";
@@ -14,6 +15,7 @@ const AñadirCancionesAPlaylist = () => {
   const [loading, setLoading] = useState("");
   const [dataUsers, setDataUsers] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const [selectedTag, setSelectedTag] = useState(null);
   const [selectedSongs, setSelectedSongs] = useState([]);
@@ -95,7 +97,7 @@ const AñadirCancionesAPlaylist = () => {
 
       if (response.ok) {
         console.log("Playlist Creada");
-        window.location.href = "http://localhost:5173/user-profile";
+        nafigate("/user-profile");
       } else {
         const data = await response.json();
         setError(data.message || "Error al crear la playlist.");
