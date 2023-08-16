@@ -62,11 +62,14 @@ export const MusicaContextual = () => {
         songs: randomSongs,
       });
 
-      let response = await fetch("http://localhost:3002/playlist/", {
-        method: "POST",
-        body: bodyContent,
-        headers: headersList,
-      });
+      let response = await fetch(
+        "https://auden-back-tau.vercel.app/playlist/",
+        {
+          method: "POST",
+          body: bodyContent,
+          headers: headersList,
+        }
+      );
 
       let data = await response.text();
       console.log(data);
@@ -89,7 +92,7 @@ export const MusicaContextual = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:3002/songs");
+        const response = await fetch("https://auden-back-tau.vercel.app/songs");
         const data = await response.json();
         const allSongs = data; // Todas las canciones obtenidas desde el servidor
 
@@ -112,7 +115,7 @@ export const MusicaContextual = () => {
 
   useEffect(() => {
     let userData = localStorage.getItem("DataUsername");
-    fetch(`http://localhost:3002/users/${userData}`)
+    fetch(`https://auden-back-tau.vercel.app/users/${userData}`)
       .then((response) => response.json())
       .then((data) => {
         setUserDatas(data); // Actualizar el estado con los datos del fetch

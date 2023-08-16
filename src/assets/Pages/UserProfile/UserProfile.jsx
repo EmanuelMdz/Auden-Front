@@ -107,12 +107,8 @@ export const UserProfile = () => {
               <h5>Mis Playlist</h5>
             </span>
             <img src="src/public/divider.svg" alt="" />
-            <div
-              onClick={goToCrearPlaylist}
-              id="btn-crear-playlist"
-              className="btn-crear-playlist"
-            >
-              <a>Crear Playlist</a>
+            <div id="btn-crear-playlist" className="btn-crear-playlist">
+              <a onClick={goToCrearPlaylist}>Crear Playlist</a>
             </div>
           </div>
 
