@@ -83,6 +83,7 @@ const AñadirCancionesAPlaylist = () => {
         playlist_name: playlistName2,
         songs: selectedSongs,
       });
+      console.log(bodyContent);
 
       let response = await fetch(
         "https://auden-back-tau.vercel.app/playlist/",
@@ -97,7 +98,7 @@ const AñadirCancionesAPlaylist = () => {
 
       if (response.ok) {
         console.log("Playlist Creada");
-        nafigate("/user-profile");
+        navigate("/user-profile");
       } else {
         const data = await response.json();
         setError(data.message || "Error al crear la playlist.");

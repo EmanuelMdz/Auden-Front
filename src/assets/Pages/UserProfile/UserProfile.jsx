@@ -16,8 +16,22 @@ export const UserProfile = () => {
   const [userPlaylistData, setUserPlaylistData] = useState([]);
   const navigate = useNavigate();
 
-  localStorage.setItem("DataUsers", JSON.stringify(DataUsers));
+  //-----------Pruebas---------------
+  const userDataToStore = {
+    user_id: DataUsers.user_id,
+    user_name: DataUsers.user_name,
+    user_username: DataUsers.user_username,
+  };
+  console.log(userDataToStore);
+
+  localStorage.setItem("UserData", JSON.stringify(userDataToStore));
+
+  //---------------------------------
+
+  // localStorage.setItem("DataUsers", JSON.stringify(DataUsers));
+
   const goToCrearPlaylist = useNavigate("/crear-playlist");
+
   useEffect(() => {
     const fetchData = async () => {
       const token = cookies.get("userToken");
@@ -92,8 +106,8 @@ export const UserProfile = () => {
             </div>
 
             <div className="name-container">
-              <h2>{DataUsers.user_name}</h2>
-              <h5>@{DataUsers.user_username}</h5>
+              <h2>{userDataToStore.user_name}</h2>
+              <h5>@{userDataToStore.user_username}</h5>
               <Link to="/configuracion" className="gear-style">
                 <span>
                   <img src="src/public/gear.svg" alt="" />
@@ -108,7 +122,7 @@ export const UserProfile = () => {
             </span>
             <img src="src/public/divider.svg" alt="" />
             <div id="btn-crear-playlist" className="btn-crear-playlist">
-              <a onClick={goToCrearPlaylist}>Crear Playlist</a>
+              <Link to="/crear-playlist">Crear Playlist</Link>
             </div>
           </div>
 
