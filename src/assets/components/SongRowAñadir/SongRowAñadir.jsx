@@ -33,7 +33,7 @@ class SongRowAñadir extends Component {
     // URL de la imagen a mostrar, dependiendo del estado
     const imageUrl = isAdded
       ? "../src/public/quitar.png"
-      : "..src/public/agregar.svg";
+      : "../src/public/agregar.svg";
 
     return (
       <>
