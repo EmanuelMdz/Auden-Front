@@ -31,7 +31,9 @@ class SongRowAñadir extends Component {
     const { isAdded, message } = this.state;
 
     // URL de la imagen a mostrar, dependiendo del estado
-    const imageUrl = isAdded ? "src\\public\\quitar.png" : "src\\public\\agregar.svg";
+    const imageUrl = isAdded
+      ? "../src/public/quitar.png"
+      : "..src/public/agregar.svg";
 
     return (
       <>
@@ -45,13 +47,21 @@ class SongRowAñadir extends Component {
           </div>
           <div className="added-song-container">
             {message && (
-              <p id="accion-message" style={{ color: isAdded ? "green" : "red" }}>
+              <p
+                id="accion-message"
+                style={{ color: isAdded ? "green" : "red" }}
+              >
                 {message}
               </p>
             )}
           </div>
           <div className="song-options">
-            <img id="agregarCancion" src={imageUrl} alt="" onClick={this.handleToggleAddSong} />
+            <img
+              id="agregarCancion"
+              src={imageUrl}
+              alt=""
+              onClick={this.handleToggleAddSong}
+            />
           </div>
         </div>
       </>
