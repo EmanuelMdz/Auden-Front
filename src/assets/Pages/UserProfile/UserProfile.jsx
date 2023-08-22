@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import BackgroundC from "../../components/BackgroundC/BackgroundC";
 import { useEffect, useState } from "react";
-import { XScreen } from "../../components/LoadingWindow";
 import { LoadingScreen } from "../../components/LoadingWindow";
 import CardPortadaMultiple from "../../components/CardPortadaMultiple/CardPortadaMultiple";
 import Nav_Bar from "../../components/Nav_bar";
