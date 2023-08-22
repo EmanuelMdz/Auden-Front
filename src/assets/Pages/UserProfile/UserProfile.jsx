@@ -101,7 +101,7 @@ export const UserProfile = () => {
           <div className="picture-name-container fade-in-left">
             <div className="picture-container">
               <div id="profile-photo" className="profile-photo">
-                <img src="../../../user-default.png" alt="" />
+                <img src="src/public/user-default.png" alt="" />
               </div>
             </div>
 
