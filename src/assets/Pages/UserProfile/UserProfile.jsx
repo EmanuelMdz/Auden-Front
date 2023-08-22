@@ -97,7 +97,7 @@ export const UserProfile = () => {
         <LoadingScreen />
       ) : (
         <BackgroundC>
-          <div className="picture-name-container fade-in-left">
+          <div className="picture-name-container">
             <div className="picture-container">
               <div id="profile-photo" className="profile-photo">
                 <img src="" alt="" />
@@ -118,7 +118,7 @@ export const UserProfile = () => {
             </div>
           </div>
 
-          <div className="playlist-user-controls fade-in-right">
+          <div className="playlist-user-controls">
             <span>
               <h5>Mis Playlist</h5>
             </span>
@@ -131,7 +131,7 @@ export const UserProfile = () => {
             </div>
           </div>
 
-          <div className="playlist-box-container fade-in-left">
+          <div className="playlist-box-container">
             {groupSongsByPlaylist().map((playlistData) => (
               <Link
                 key={playlistData.playlist_id}
