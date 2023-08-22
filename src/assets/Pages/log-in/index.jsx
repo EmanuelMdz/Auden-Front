@@ -142,7 +142,10 @@ export const Login = () => {
       <nav className="navbar_container">
         <a href="/">
           {" "}
-          <img src="src\public\left-icon-placeholder.png" alt="<-" />
+          <img
+            src="https://github.com/EmanuelMdz/Auden-Front/blob/main/src/public/left-icon-placeholder.png?raw=true"
+            alt="<-"
+          />
         </a>
 
         <p>Iniciar Sesión</p>

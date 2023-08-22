@@ -101,7 +101,10 @@ export const UserProfile = () => {
           <div className="picture-name-container fade-in-left">
             <div className="picture-container">
               <div id="profile-photo" className="profile-photo">
-                <img src="src/public/user-default.png" alt="" />
+                <img
+                  src="https://github.com/EmanuelMdz/Auden-Front/blob/main/src/public/user-default.png?raw=true"
+                  alt=""
+                />
               </div>
             </div>
 
@@ -110,7 +113,10 @@ export const UserProfile = () => {
               <h5>@{userDataToStore.user_username}</h5>
               <Link to="/configuracion" className="gear-style">
                 <span>
-                  <img src="src/public/gear.svg" alt="" />
+                  <img
+                    src="https://raw.githubusercontent.com/EmanuelMdz/Auden-Front/d6099fe0b5fc3e661c3a03973fd9a894244eb399/src/public/gear.svg"
+                    alt=""
+                  />
                 </span>
               </Link>
             </div>
@@ -120,7 +126,10 @@ export const UserProfile = () => {
             <span>
               <h5>Mis Playlist</h5>
             </span>
-            <img src="src/public/divider.svg" alt="" />
+            <img
+              src="https://raw.githubusercontent.com/EmanuelMdz/Auden-Front/d6099fe0b5fc3e661c3a03973fd9a894244eb399/src/public/divider.svg"
+              alt=""
+            />
             <div id="btn-crear-playlist" className="btn-crear-playlist">
               <Link to="/crear-playlist">Crear Playlist</Link>
             </div>
