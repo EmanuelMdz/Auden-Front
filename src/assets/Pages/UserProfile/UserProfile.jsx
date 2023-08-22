@@ -99,9 +99,9 @@ export const UserProfile = () => {
         <BackgroundC>
           <div className="picture-name-container fade-in-left">
             <div className="picture-container">
-              <div id="profile-photo" className="profile-photo">
+              <div id="profile-photoo" className="profile-photo">
                 <img
-                  src="https://github.com/EmanuelMdz/Auden-Front/blob/main/src/public/user-default.png?raw=true"
+                  src="https://github.com/EmanuelMdz/Auden-Front/blob/main/src/public/user-default.png"
                   alt=""
                 />
               </div>
