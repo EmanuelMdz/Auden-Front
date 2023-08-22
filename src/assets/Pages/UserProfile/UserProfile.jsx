@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import BackgroundC from "../../components/BackgroundC/BackgroundC";
 import { useEffect, useState } from "react";
+import { XScreen } from "../../components/LoadingWindow";
 import { LoadingScreen } from "../../components/LoadingWindow";
 import CardPortadaMultiple from "../../components/CardPortadaMultiple/CardPortadaMultiple";
 import Nav_Bar from "../../components/Nav_bar";
@@ -99,11 +100,8 @@ export const UserProfile = () => {
         <BackgroundC>
           <div className="picture-name-container fade-in-left">
             <div className="picture-container">
-              <div id="profile-photoo" className="profile-photo">
-                <img
-                  src="https://github.com/EmanuelMdz/Auden-Front/blob/main/src/public/user-default.png"
-                  alt=""
-                />
+              <div id="profile-photo" className="profile-photo">
+                <img src="../../../user-default.png" alt="" />
               </div>
             </div>
 
@@ -113,7 +111,7 @@ export const UserProfile = () => {
               <Link to="/configuracion" className="gear-style">
                 <span>
                   <img
-                    src="https://raw.githubusercontent.com/EmanuelMdz/Auden-Front/d6099fe0b5fc3e661c3a03973fd9a894244eb399/src/public/gear.svg"
+                    src="https://github.com/EmanuelMdz/Auden-Front/blob/main/src/public/gear.svg"
                     alt=""
                   />
                 </span>
@@ -126,7 +124,7 @@ export const UserProfile = () => {
               <h5>Mis Playlist</h5>
             </span>
             <img
-              src="https://raw.githubusercontent.com/EmanuelMdz/Auden-Front/d6099fe0b5fc3e661c3a03973fd9a894244eb399/src/public/divider.svg"
+              src="https://github.com/EmanuelMdz/Auden-Front/blob/main/src/public/divider.svg"
               alt=""
             />
             <div id="btn-crear-playlist" className="btn-crear-playlist">
